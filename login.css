@@ -1,0 +1,327 @@
+/* Set full height for the body and html */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+html{
+    height: 100%;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+footer{
+    margin-top: auto;
+    padding: 2rem;
+}
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 95%;
+}
+
+/* header */
+header {
+    padding: 10px 25px;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #163650;
+    height: 70px;
+}
+
+header img {
+    max-width: 250px;
+    margin-top: 40px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+
+
+#login {
+    background-image: url('images/login.webp');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+}
+
+/* Glassmorphism effect for the login container */
+.login-container {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 1rem;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    height: 400px;
+    text-align: left;
+}
+
+/* Logo and header alignment */
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Header styles */
+#login-header {
+    font-size: 1.5rem;
+}
+
+/* Label styles */
+label {
+    display: block;
+    margin-top: 1rem;
+    font-size: 1.1rem;
+}
+
+/* Input styles */
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    /* Ensure full width */
+    padding-top: 10px;
+    margin: 5px 0;
+    /* Space above and below the input */
+    border: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+    /* Underlined effect */
+    border-width: 100%;
+    background: transparent;
+    /* No background */
+    color: white;
+    /* Input text color */
+    outline: none;
+    /* Remove default outline */
+    font-size: 1.1rem;
+}
+
+input[type="text"]::placeholder,
+input[type="password"]::placeholder {
+    color: #ffffff8a;
+    font-size: 0.95rem;
+}
+/* Button styles */
+#btn-login {
+    width: 100%;
+    margin-top: 25px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(0, 123, 255, 0.7);
+    /* Button background color */
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 25px;
+}
+button:focus{
+    border: 2px solid black;
+}
+#btn-login:hover {
+    background-color: rgba(1, 108, 221, 0.9);
+}
+
+#login-footer {
+    text-align: center;
+    /* padding: 1rem; */
+    background: rgba(0, 0, 0, 0.6);
+    width: 100%;
+}
+
+#login-footer a {
+    color: white;
+}
+
+#login-footer a:hover {
+    color: #a7a3a1;
+}
+
+/* Footer for all pages */
+.linksNav,
+.linksFooter {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.linksNav {
+    color: #1a3153;
+}
+
+.linksNav:hover {
+    color: #1d3456;
+}
+
+.linksFooter {
+    color: #dbc7c0;
+}
+
+.linksFooter:hover {
+    color: #9e7c70
+}
+
+.required {
+    color: red;
+    margin: 5px;
+}
+
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0; /* Start at the top */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: hidden; /* Prevent scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+    transition: opacity 0.5s ease; /* Transition for the opacity */
+    color: black;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 450px; /* Set a fixed width */
+    height: 200px;
+    position: absolute; /* Position relative to modal */
+    left: 50%; /* Center horizontally */
+    top: 50%; /* Center vertically */
+    transform: translate(-50%, -50%); /* Adjust to center */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    opacity: 0; /* Start hidden */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Transition for opacity and transform */
+}
+.modal-content p{
+    margin-left: 45px;
+}
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.error-message {
+    color: red; /* Red color for error messages */
+    margin-top: 10px; /* Space above the error message */
+    font-size: 14px; /* Font size for the error message */
+    display: none; /* Hide by default */
+}
+.header-container {
+    display: flex; /* Use flexbox to align items */
+    align-items: center; /* Center items vertically */
+    margin-bottom: 20px; /* Space below the header */
+}
+.icon-container {
+    margin-right: 15px; /* Space between icon and title */
+}
+
+.icon {
+    width: 40px; /* Width of the circle */
+    height: 40px; /* Height of the circle */
+    /* border-radius: 50%; Make it circular */
+    
+}
+.icon img{
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.password-container, .username-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-container #password, .username-container #username {
+    width: 100%;
+}
+
+.password-container #togglePassword {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    font-size: 1.5em;
+    color: rgb(245, 240, 240);
+}
+
+.username-container #username-icon{
+    position: absolute;
+    right: 10px;
+    font-size: 1.5em;
+    color: rgb(245, 240, 240);
+}
+@media screen and (min-width: 768px) {
+
+    label {
+        font-size: 1.05em;
+        
+    }
+
+    input[type="text"],
+    input[type="password"] {
+        font-size: 1.15em;
+    }
+
+    input[type="text"]::placeholder,
+    input[type="password"]::placeholder {
+        color: #ffffff8a;
+        font-size: 1.1rem;
+    }
+    #login-header{
+        font-size: 1.8em;
+        text-align: center;
+        margin: 0;
+    }
+    .logo-container{
+        display: block;
+        text-align: center;
+    }
+    .login-container{
+        width: 350px;
+    }
+    .login-container img{
+        width: 155px;
+        height: auto;
+    }
+
+    
+}
+
+@media screen and (min-width: 1024px){
+    label{
+        font-size: 1.45em;
+    }
+    
+}

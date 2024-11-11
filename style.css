@@ -1,0 +1,2550 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.required {
+    color: red;
+    margin: 5px;
+}
+
+.indicator {
+    color: red;
+    text-align: left;
+    margin: 10px;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+
+footer {
+    margin-top: auto;
+}
+
+/*general*/
+a {
+    text-decoration: none;
+}
+
+button,
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="email"],
+input[type="number"],
+input[type="tel"],
+select {
+    padding: 0px 10px;
+    height: 40px;
+    border-radius: 4px;
+    border: 2px solid #163650;
+    font-size: 1rem;
+}
+
+button:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="date"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+select:focus textarea:focus {
+    border: 3px solid black;
+}
+
+.form-section textarea {
+    padding: 10px 10px;
+    border-radius: 4px;
+    border: 2px solid #163650;
+    font-size: 1rem;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    background-color: #f4f4f4;
+    color: #163650;
+    border:solid 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: rgba(244, 244, 244, 0.7);
+}
+
+h1 {
+    padding: 0 0 8px;
+    text-align: center;
+    color: #1a3153;
+    font-size: 1.5rem;
+}
+
+
+/*header*/
+header {
+    padding: 10px 25px;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-bottom: 1px solid #163650;
+    height: 70px;
+}
+
+header img {
+    max-width: 250px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+/* Navigation */
+nav {
+    float: right;
+    padding-right: 25px;
+}
+
+#menu-icon {
+    background: url("images/hamburger.png");
+    display: block;
+    width: 40px;
+    height: 40px;
+}
+
+nav ul {
+    background: white;
+    list-style-type: none;
+    position: absolute;
+    right: 100%;
+    top: 0;
+    width: 100%;
+    transition: 1s all ease;
+    text-align: center;
+    height: auto;
+    z-index: 999;
+    overflow: visible;
+}
+
+
+
+nav li {
+    margin-top: 25px;
+    padding: 9px;
+}
+
+nav:hover ul {
+    right: 0;
+    display: block;
+}
+
+
+
+/* DETAILS */
+
+details {
+    position: relative;
+    width: 100%;
+}
+
+.custom-summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 10px 30px;
+    display: block;
+    position: relative;
+    text-decoration: none;
+    font-weight: 800;
+}
+
+
+.custom-summary::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+    background-color: black;
+}
+
+.custom-summary::before {
+    content: '<';
+    position: absolute;
+    right: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5em;
+    transition: transform 0.3s ease;
+}
+
+details[open] .custom-summary::before {
+    transform: translateY(-50%) rotate(-90deg);
+}
+
+
+.form-row label {
+
+    margin: 5px 10px;
+
+}
+
+.form-row textarea {
+    padding: 10px;
+    height: 180px;
+}
+
+.form-row input,
+.form-row select,
+.form-row textarea,
+.form-row p {
+    display: block;
+    width: 95%;
+    margin: 0 10px;
+}
+
+.rad-report input,
+.rad-report label,
+.resolved input,
+.resolved label {
+    width: 20px;
+    display: inline;
+    margin-top: 10px;
+}
+
+.btn-report {
+    text-align: right;
+    padding-right: 10px;
+}
+
+.btn-report button {
+    background: #163650;
+    color: #b8c4d5;
+    width: 85px;
+    margin: 15px 0;
+}
+
+/* Header styles */
+
+
+/* Label styles */
+label {
+    display: block;
+    /* Makes labels take up the full width */
+    margin-top: 1rem;
+    /* Space above each label */
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-align: left;
+}
+
+
+/* Footer for all pages */
+.linksNav,
+.linksFooter {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.linksNav {
+    color: #1a3153;
+}
+
+.linksNav:hover {
+    color: #1d3456;
+}
+
+.linksFooter {
+    color: #dbc7c0;
+}
+
+.linksFooter:hover {
+    color: #9e7c70
+}
+
+nav ul a {
+    color: #f4f4f4;
+}
+
+#footer-scroll {
+    background-color: #163650;
+    text-align: center;
+    padding: 20px 0;
+
+}
+
+#footer-scroll p {
+    color: #dbc7c0;
+}
+
+/* Home page */
+.main-container {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 15px;
+    margin: 25px auto;
+}
+
+.featuresCreateNCR,
+.featuresViewNCR,
+.featuresManageAcc {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fff;
+    flex: 0 1 30%;
+    padding: 10px 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: 100%;
+}
+
+.featuresCreateNCR {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.20), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 1)), url("images/CreateNCR.webp");
+}
+
+.featuresViewNCR {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.20), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 1)), url("images/ViewNCR.webp");
+}
+
+.featuresManageAcc {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.20), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 1)), url("images/ManagaeAccount.webp");
+}
+
+.featuresCreateNCR h2,
+.featuresViewNCR h2,
+.featuresManageAcc h2 {
+    font-size: 1.5em;
+}
+
+.featuresCreateNCR p,
+.featuresViewNCR p,
+.featuresManageAcc p {
+    font-size: 0.99em;
+    margin: 20px 0;
+}
+
+.featuresCreateNCR button,
+.featuresViewNCR button,
+.featuresManageAcc button {
+    border-radius: 20px;
+    width: 50%;
+    height: 35px;
+}
+
+#recentReportsContainer,
+#pinnedReportsContainer {
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    text-align: left;
+}
+
+#recent-reports h2,
+#pinned-reports h2 {
+    margin: 10px 0 15px 0;
+}
+
+.tab-content {
+    text-align: left;
+}
+
+.report-card {
+    display: flex;
+    gap: 1em;
+    padding: 0.5em;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    font-size: 0.9em;
+    color: #333;
+    transition: all 0.2s ease;
+    margin-bottom: 3px;
+    justify-content: left;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.reportInfo {
+    width: 100%;
+}
+
+.report-card:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #e2dfdf;
+}
+
+.report-card .supplier-name {
+    font-weight: bold;
+}
+
+.report-card .report-date,
+.report-card .report-number,
+.report-card .report-description {
+    color: #666;
+}
+
+.report-card .pinIcon {
+    visibility: visible;
+}
+
+.report-card:hover .pinIcon {
+    visibility: visible;
+}
+
+.supplier-name {
+    justify-content: left;
+    width: 150px;
+}
+
+/* Tab Navigation */
+.tab-navigation {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.tab-button {
+    cursor: pointer;
+    border: none;
+    background-color: #ddd;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-right: 12px;
+    font-size: 14px;
+    padding: 8px 16px;
+}
+
+.tab-button.active {
+    background-color: #333;
+    color: white;
+}
+
+/* Hide tab panels by default */
+.tab-panel {
+    display: none;
+}
+
+/* Show the active tab panel */
+.tab-panel.active {
+    display: flex;
+    /* Use flexbox for alignment */
+    flex-direction: column;
+    /* Stack content vertically */
+}
+
+#itemBarChart {
+    width: 100%;
+    /* Full width of the container */
+    height: 150px;
+    /* Small height */
+    background-color: #f5f5f5;
+    /* Light gray background for better visibility */
+    border: 2px solid #4a90e2;
+    /* Blue border for a defined outline */
+    border-radius: 8px;
+    /* Rounded corners */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    /* Light shadow effect */
+}
+
+#graphs {
+    text-align: left;
+}
+
+#graphs h2 {
+    margin: 25px 0;
+}
+
+
+/* Create page */
+/* Status Bar */
+.main-container-create {
+    display: flex;
+    flex-direction: column;
+    /* Stack the status bar and form vertically */
+    height: auto;
+}
+
+.status-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Align items to the start (top) */
+    text-align: left;
+    /* Align text to the left */
+    padding: 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    /* Make the status bar full width */
+}
+
+.status-steps {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 100%;
+    padding-top: 20px;
+}
+
+.step-icon {
+    display: none;
+}
+
+.status-step {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+/* Remove the icon and position styles */
+.status-step.active {
+    font-weight: bold;
+}
+
+.status-step.completed {
+    color: #757575;
+}
+
+.form-container {
+    flex-grow: 1;
+    padding: 0 10px 10px 10px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    /* Stack items vertically */
+    width: 100%;
+    /* Make the form full width */
+    border-radius: 5px;
+}
+
+
+/* create page  */
+/* Fieldset Styles */
+fieldset {
+    border: 1px solid #163650;
+    /* Example border style */
+    border-radius: 5px;
+    /* Rounded corners */
+    margin: 10px 0;
+    /* Space between fieldsets */
+}
+
+fieldset legend {
+    margin-top: 10px;
+    /* Space above the legend */
+    font-weight: bold;
+    /* Optional: make the legend text bold */
+    font-size: 1rem;
+    /* Optional: adjust the font size */
+}
+
+.createNcr-verticalLayout,
+.verticalLayout {
+    display: flex;
+    flex-direction: column;
+}
+
+#ncr-form {
+    text-align: center;
+}
+
+.form-section {
+    display: none;
+}
+
+.form-section.active {
+    display: flex;
+    padding: 20px;
+    margin: 0 0 10px 0;
+    border-radius: 5px;
+    border: none;
+    /* Added border style */
+    flex-direction: column;
+    text-align: left;
+}
+
+.form-section.active label {
+    font-size: 1rem;
+}
+
+.form-section.active button {
+    background-color: #1a3153;
+    color: #f4f4f4;
+    margin: 10px 10px;
+    height: 40px;
+    width: 95%;
+}
+
+.form-section.active button:hover {
+    background-color: #10223d;
+}
+
+#clear-btn1,
+#clear-btn2,
+#back-btn1,
+#back-btn2 {
+    background-color: #fff;
+    border: #1a3153 solid;
+    color: #1a3153;
+}
+
+#clear-btn1:hover,
+#clear-btn2:hover,
+#back-btn1:hover,
+#back-btn2:hover {
+    background-color: #e0e0e0;
+}
+
+.form-section p {
+    font-weight: bold;
+    margin: 0;
+    /* Added margin reset */
+}
+
+.form-section span {
+    font-weight: normal;
+}
+
+.affirmation {
+    margin-top: 30px;
+}
+
+.btn-qa-create {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-content: space-evenly;
+}
+
+.form-section label,
+.form-section input,
+.form-section select {
+    display: block;
+    text-align: left;
+    margin-top: 10px;
+}
+
+.form-section textarea {
+    height: 200px;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.form-section textarea::placeholder {
+    padding: 10px;
+}
+
+.qa-info-section input,
+.qa-info-section select {
+    width: 100%;
+}
+
+.qa-process {
+    text-align: left;
+    border: none;
+    margin-top: 20px;
+}
+
+.item-marked-nonconforming {
+    border: none;
+}
+
+.qa-process input {
+    display: inline;
+    height: 15px;
+    width: 45px;
+}
+
+.item-conforming {
+    text-align: left;
+    border: none;
+}
+
+.item-conforming input,
+.item-conforming label {
+    display: inline;
+
+}
+
+.createncrmainfield {
+    border: none;
+    border-radius: 5px;
+    margin: 4%;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+}
+
+.item-conforming legend {
+    text-align: left;
+}
+
+.confirmation p {
+    text-align: left;
+    margin-top: 20px;
+    font-size: 1.05em;
+}
+
+.affirmation input,
+.affirmation label {
+    display: inline;
+    font-size: 0.85em;
+}
+
+.media {
+    border: none;
+    margin-top: 20px;
+}
+
+#drop-area {
+    border: 2px dashed #ccc;
+    padding: 20px;
+    text-align: center;
+    margin: 10px 0;
+}
+
+#drop-area.dragover {
+    border-color: #000;
+}
+
+
+
+
+/* Dropdown for qa-section  */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    /* Ensures label and span stack vertically */
+    padding: 5px;
+    /* Adds space inside the div */
+    overflow: hidden;
+    /* Clips any overflow */
+}
+
+#qa-section {
+    display: grid;
+    grid-template-rows: 1fr;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    /* or overflow: auto; */
+    box-sizing: border-box;
+}
+
+#qa-section label {
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+#qa-section span {
+    white-space: normal;
+    text-align: left;
+    word-break: break-word;
+    /* Breaks long words */
+    overflow-wrap: break-word;
+
+}
+
+#qa-section label,
+#qa-section span {
+    margin-left: 25px;
+}
+
+/* Chekboxes and radio btns*/
+.checkbox-button,
+.radio-button {
+    display: inline-block;
+    border-radius: 5px;
+    padding: 10px 10px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #4c6488;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.checkbox-button input[type="checkbox"],
+.radio-button input[type="radio"] {
+    display: none;
+}
+
+.checkbox-button.checked,
+.radio-button.checked {
+    background-color: #4c6488;
+    color: white;
+}
+
+label.checkbox-button,
+label.radio-button {
+    margin: 0px;
+    font-size: 1rem;
+}
+
+.chkboxes-create-ncr,
+.rad-create-ncr {
+    display: flex;
+    justify-content: space-around;
+    background-color: #eeeeee;
+    border-radius: 5px;
+    padding: 10px 0px;
+}
+
+.rad-create-ncr {
+    width: 200px;
+}
+
+/* View NCR */
+.verticalLayout {
+    width: 100%;
+    /* Ensure full width but no overflow */
+    text-align: center;
+    margin: 0 auto;
+}
+
+/* Filter Section */
+.filter-section {
+    margin: 0 auto;
+    /* Center align and prevent overflow */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+    /* Prevent overflow on smaller screens */
+}
+
+
+.autocomplete {
+    position: relative;
+    display: inline-block;
+}
+
+.autocomplete-items {
+    position: absolute;
+    border: none;
+    z-index: 999;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+.autocomplete-item {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.autocomplete-item:hover,
+.autocomplete-item.active {
+    background-color: #e9e9e9;
+}
+
+.highlight {
+    font-weight: bold;
+    color: blue;
+}
+
+
+/* Search Bar */
+#search,
+#date-filter {
+    width: 250px;
+    height: 40px;
+    color: #1a3153;
+}
+
+/* Status Filter */
+input[type="radio"].status-filter {
+    color: #1a3153;
+}
+
+.horizontal {
+    display: flex;
+}
+
+/* Fieldset View NCR */
+.fieldset-viewncr {
+    border: 2px solid rgba(0, 0, 0, 0.621);
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    padding: 10px;
+    max-width: 100%;
+    border: none;
+    text-align: center;
+}
+
+.fieldset-viewncr label {
+    margin-top: 0px;
+    font-size: 1rem;
+}
+
+/* General Radio Button Style */
+input[type="radio"] {
+    color: #1a3153;
+}
+
+/* Radio Button Margin */
+.radio-btn {
+    margin-left: 30px;
+}
+
+/* Reset Button*/
+#btn-reset {
+    height: 40px;
+    background-color: #1a3153;
+    color: #f4f4f4;
+    width: 150px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 20px 0px;
+}
+
+/* Bold Text for Status and Record Count */
+#status-filter,
+#record-count {
+    font-weight: bold;
+
+}
+
+#record-count {
+    text-align: left;
+    margin: 10px;
+}
+
+#status-filter {
+    text-align: center;
+    font-size: 1.1rem;
+    text-align: left;
+}
+
+/* Table */
+.ncr-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-family: Arial, sans-serif;
+    font-size: 0.85em;
+}
+
+.ncr-table thead th {
+    background-color: #4c6488;
+    color: #f4f4f4;
+    padding: 18px;
+    border-bottom: 2px solid #ccc;
+    font-weight: bold;
+}
+
+.ncr-table tbody td {
+    padding: 12px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.ncr-table tbody tr:nth-child(even) {
+    background-color: #d7e4f9;
+}
+
+.ncr-table tbody tr:nth-child(odd) {
+    background-color: #f4f4f4;
+}
+
+.ncr-table tbody tr:hover {
+    background-color: #b8c4d5;
+}
+
+/* Responsive Layout - Show only selected columns on small screens */
+.ncr-table th,
+.ncr-table td {
+    display: none;
+}
+
+/* Mobile view - Show only 1st, 2nd, and 5th columns */
+.ncr-table thead th:nth-child(1),
+.ncr-table thead th:nth-child(2),
+.ncr-table thead th:nth-child(5),
+.ncr-table thead th:nth-child(6),
+.ncr-table tbody td:nth-child(1),
+.ncr-table tbody td:nth-child(2),
+.ncr-table tbody td:nth-child(5),
+.ncr-table tbody td:nth-child(6) {
+    display: table-cell;
+}
+
+.ncr-table tbody td:nth-child(1) {
+    font-weight: bold;
+}
+
+/* .view-btn, .edit-btn{
+    background-color: #007bff;
+    border-radius: 15px;
+    height: 30px;
+    width: auto;
+} */
+/* Manage account */
+.account {
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    border: none;
+    margin-bottom: 0px;
+}
+
+.account legend {
+    justify-content: center;
+    text-align: center;
+}
+
+.account label {
+    margin-top: 20px;
+}
+
+.gradient-acc {
+    background: linear-gradient(to bottom, #a7bcdc, #1a3153);
+}
+
+.account button {
+    margin: 10px;
+    background-color: #1a3153;
+    color: #f4f4f4;
+    width: 200px;
+}
+
+.btns-acc {
+    text-align: center;
+    margin: 20px 0px;
+}
+
+.account input,
+.account select {
+    width: 200px;
+}
+
+.account legend img {
+    height: 170px;
+    width: 170px;
+}
+
+
+/* Contact us */
+.fieldset-contact {
+    flex-direction: column;
+    /* Stack elements vertically */
+    text-align: center;
+    margin: 0px 5% 2% 5%;
+}
+
+.fieldset-contact label {
+    font-weight: 600;
+    text-align: left;
+    margin-left: 2%;
+}
+
+.fieldset-contact #name,
+.fieldset-contact #email {
+    height: 40px;
+    width: 95%;
+}
+
+.fieldset-contact #message {
+    width: 65%;
+    height: 300px;
+    padding: 10px;
+    font-size: 1rem;
+    margin: 0px 20px;
+}
+
+/* Button Styling */
+.fieldset-contact button {
+    align-self: flex-end;
+    height: 45px;
+    background-color: #1a3153;
+    color: white;
+    width: 200px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 20px 0px;
+}
+
+/* Button Hover Effect */
+.fieldset-contact button:hover {
+    background-color: #394b6a;
+}
+
+
+/* privacy policy page */
+#privacy-wrapper {
+    width: 95%;
+    margin: 0 auto;
+}
+
+#table-of-contents {
+    font-size: 1.35em;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+#privacy-wrapper strong {
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+#privacy-wrapper p {
+    line-height: 1.6;
+}
+
+
+#privacy-wrapper h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+#privacy-wrapper h2 {
+    font-size: 1.65em;
+    margin-top: 50px;
+    margin-bottom: 15px;
+}
+
+#privacy-wrapper h3 {
+    font-size: 1.25em;
+    margin-top: 20px;
+    margin-bottom: 8px;
+}
+
+#Privacy-policy ol {
+    margin-left: 40px;
+}
+
+#Privacy-policy li {
+    margin-bottom: 10px;
+}
+
+.contact-info {
+    font-size: 1.7rem;
+}
+
+.contact-info a {
+    color: #1a3153;
+    text-decoration-line: underline;
+}
+
+.summ-policy a {
+    color: #1a3153;
+    text-decoration-line: underline;
+}
+
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    /* Start at the top */
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: hidden;
+    /* Prevent scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+    transition: opacity 0.5s ease;
+    /* Transition for the opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    border-radius: 8px;
+    /* Rounded corners */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 450px;
+    /* Set a fixed width */
+    height: 200px;
+    position: absolute;
+    /* Position relative to modal */
+    left: 50%;
+    /* Center horizontally */
+    top: 50%;
+    /* Center vertically */
+    transform: translate(-50%, -50%);
+    /* Adjust to center */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Shadow effect */
+    opacity: 0;
+    /* Start hidden */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    /* Transition for opacity and transform */
+}
+
+.modal-content p {
+    margin-left: 45px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.error-message {
+    color: red;
+    /* Red color for error messages */
+    margin-top: 10px;
+    /* Space above the error message */
+    font-size: 14px;
+    /* Font size for the error message */
+    display: none;
+    /* Hide by default */
+}
+
+.header-container {
+    display: flex;
+    /* Use flexbox to align items */
+    align-items: center;
+    /* Center items vertically */
+    margin-bottom: 20px;
+    /* Space below the header */
+}
+
+.icon-container {
+    margin-right: 15px;
+    /* Space between icon and title */
+}
+
+.icon {
+    width: 40px;
+    /* Width of the circle */
+    height: 40px;
+    /* Height of the circle */
+    /* border-radius: 50%; Make it circular */
+
+}
+
+.icon img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+td button {
+    /* background: #007bff; */
+    border: 1px solid #007bff;
+    border-radius: 25px;
+    color: #007bff;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 0.95em;
+    padding: 5px 15px;
+    margin-right: 15px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+    width: 85%;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+td button i {
+    margin-right: 5px;
+}
+
+td button:hover {
+    background: #0057b3bf;
+    color: white;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+td button:focus {
+    outline: 2px solid black;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5);
+}
+
+
+.icon-badge {
+    position: relative;
+    background: none;
+    color: #333;
+    border: none;
+    padding: 10px;
+    width: auto;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin: 0 auto;
+}
+
+.icon-badge .fa {
+    font-size: 18px;
+    display: none;
+}
+
+.icon-badge:hover {
+    background-color: #333333c5;
+}
+
+.icon-badge .badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.notification-box,
+.settings-box {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+.settings-box a {
+    color: #333;
+}
+
+.notification-box ul,
+.settings-box ul {
+    list-style-type: none;
+    padding: 0;
+    margin-left: 15px;
+    box-shadow: 0 4px 8px black;
+
+}
+
+.notification-box ul li,
+.settings-box ul li {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+.notification-box ul li:last-child,
+.settings-box ul li:last-child {
+    border-bottom: none;
+}
+
+.notification-box ul li i,
+.settings-box ul li i {
+    margin-right: 10px;
+}
+
+
+.badge {
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+    margin-left: 5px;
+}
+/* NCR REPORT*/
+ /*Pdf Button*/
+    .button-container{
+    display: flex;
+       justify-content: flex-end;  /* Align button to the right */
+       padding: 20px;
+    }
+    .ncr-buttons .fa{
+     margin-right: 10px;
+    }
+  
+    .custom-summary{
+     font-size: 1.0em;
+    }
+
+
+
+/*media*/
+@media screen and (min-width: 320px) {
+    h1{
+        font-size:1.3em;;
+    }
+    .custom-summary{
+        font-size:0.9em ;
+    }
+    header {
+        padding: 10px 10px;
+    }
+
+    header img {
+        max-width: 200px;
+    }
+
+
+     /*NCR Report */
+    
+
+    /*QA Report*/ 
+        
+        /*edit button Same for all three*/
+        .btn-report{
+            margin-right:40px
+        }
+        /*text look in same way for every line*/
+        .resolved{
+            padding-top:10px ;
+        }
+    /*Engineering */
+        /*text look in same way for every line*/
+        .rad-report{
+            padding-bottom: 10px;
+        }
+    /*Purchasing*/
+         /*text look in same way*/
+        .rad-report{
+            padding-top: 10px;
+        } 
+
+    
+}
+
+@media screen and (min-width: 768px) {
+
+    /*genral*/
+    h1 {
+        font-size: 2rem;
+    }
+
+    .breadcrumb-item {
+        font-size: 1rem;
+    }
+
+    /*home*/
+    .main-container {
+        display: block;
+        text-align: center;
+        margin: 10px 100px;
+    }
+
+
+    p {
+        margin-top: 5px;
+    }
+
+    .featuresCreateNCR,
+    .featuresViewNCR,
+    .featuresManageAcc {
+        margin: 40px 0px;
+        height: 250px;
+    }
+
+    .featuresCreateNCR h2,
+    .featuresViewNCR h2,
+    .featuresManageAcc h2 {
+        font-size: 2rem;
+    }
+
+    .featuresCreateNCR p,
+    .featuresViewNCR p,
+    .featuresManageAcc p {
+        font-size: 1rem;
+    }
+
+    .report-card {
+        flex-direction: row;
+    }
+
+    .reportInfo {
+        width: 70%;
+    }
+
+    .tab-button {
+        font-size: 15px;
+        padding: 9px 18px;
+    }
+
+    /* create ncr*/
+
+    .form-section textarea {
+        height: 250px;
+        width: 100%;
+    }
+    
+    #description-item {
+        margin: 18;
+    }
+
+    .qa-info-section {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+
+    .btn-qa-create {
+        align-self: flex-end;
+        width: 50%;
+    }
+
+    .two-rows {
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+        align-self: flex-start;
+    }
+
+    .two-rows label {
+        margin-left: 8%;
+        margin-bottom: 10px;
+    }
+
+    .two-cols {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .col-confirm {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .media {
+        padding: 0px 300px;
+    }
+
+    .fieldset-margin fieldset {
+        margin-top: 10px;
+    }
+
+    .filter-section {
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+
+    .filter-section div {
+        width: 100%;
+        text-align: left;
+    }
+
+
+    .serach-bar,
+    .date-filter {
+        width: 65%;
+    }
+
+    .fieldset-viewncr {
+        flex-direction: row;
+        justify-content: center;
+        gap: 8px;
+        width: 350px;
+    }
+     
+    .ncr-table th,
+    .ncr-table td {
+        display: table-cell;
+        /* Show all table cells */
+    }
+
+    .fieldset-viewncr legend {
+        font-size: 1.2rem;
+        text-align: left;
+        margin-left: 8px;
+    }
+
+    .ncr-table {
+        font-size: 14px;
+    }
+    
+    
+
+    /*view ncr*/
+
+    .filter-section label,
+    #status-filter {
+        text-align: left;
+    }
+
+    #search,
+    #date-filter {
+        width: 100%;
+    }
+
+    .ncr-table tbody td {
+        padding: 15px;
+    }
+
+    .main-container section {
+        width: 100%;
+    }
+
+    /* account */
+    .account input,
+    .account select {
+        width: 500px;
+    }
+
+    .account legend img {
+        height: 200px;
+        width: 200px;
+    }
+
+    .ncr-table th,
+    .ncr-table td {
+        display: table-cell;
+    }
+
+    /* Nav bar */
+    #menu-icon {
+        display: none;
+        /* Hide hamburger menu icon */
+    }
+
+    nav {
+        margin-left: auto;
+        padding-right: 0;
+        /* Push nav to the right */
+    }
+
+    nav ul {
+        right: 0;
+        transition: none;
+        display: block;
+        background: transparent;
+        padding: 0;
+        margin: 0;
+        position: relative;
+        overflow-y: visible;
+        overflow-x: visible;
+        }
+
+    nav li {
+        display: inline-block;
+        position: relative;
+        margin: 0;
+    }
+
+    nav li a {
+        display: block;
+        padding: 5px 5px;
+        text-align: center;
+        text-decoration: none;
+        color: #000;
+    }
+
+    .icon-text {
+        display: none;
+    }
+
+    .icon-badge .fa {
+        display: block;
+    }
+
+    .icon-badge {
+        background-color: #333333f4;
+        border-radius: 50%;
+        color: white;
+        height: 40px;
+        width: 40px;
+    }
+
+    nav a:hover {
+        text-decoration: underline;
+    }
+
+    .notification-box, .settings-box{
+        width: 180px;
+    }
+    .notification-box ul, .settings-box ul{
+        margin: 5px auto;
+        box-shadow: none;
+
+    }
+    .notification-box ul li, .settings-box ul li{
+        margin: 8px auto;
+    }
+    /* contacat us */
+    .fieldset-contact {
+        padding: 0px 40px;
+    }
+
+    .fieldset-contact label {
+        margin-left: 18%;
+    }
+
+    .fieldset-contact #name,
+    .fieldset-contact #email {
+        width: 65%;
+    }
+
+    .brdcontainer nav {
+        float: left;
+        margin: 0;
+    }
+
+    .form-section textarea::placeholder {
+        padding: 5px;
+    }
+
+    .form-section.active label {
+        margin-left: 0;
+    }
+
+    .account .indicator {
+        margin-left: 123px;
+        align-self: flex-start;
+    }
+
+    .status-bar {
+        width: 100%;
+        align-items: center;
+    }
+
+    .descr-container {
+        width: 100%;
+    }
+   
+}
+
+
+
+
+@media screen and (min-width: 1024px) {
+
+    /*header*/
+    header {
+        padding: 10px 25px;
+        background-color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #163650;
+        height: 70px;
+    }
+
+    header img {
+        max-width: 300px;
+        margin-top: 0;
+    }
+
+    .logo-container {
+        display: flex;
+        align-items: center;
+    }
+
+
+    /*general*/
+    h1 {
+        font-size: 2rem;
+    }
+
+    label,
+    label {
+        font-size: 1rem;
+    }
+
+    /*home page*/
+    .main-container {
+        padding: 40px;
+    }
+
+    /*view ncr*/
+
+
+    .filter-section {
+        flex-direction: row;
+        margin: 20px 15px;
+    }
+
+    .serach-bar,
+    .date-filter {
+        width: 200px;
+    }
+
+    #record-count {
+        margin-bottom: 10px;
+    }
+
+    /* ncr  report page */
+    /*QA PERSON*/
+    .form-group {
+        margin-left: 90px;
+    }
+
+    .indicator {
+        margin-left: 100px;
+    }
+
+    .account .indicator {
+        align-self: flex-start;
+        margin-left: 0;
+    }
+
+    .form-row label,
+    .form-row input,
+    .form-row select,
+    .form-row textarea {
+        width: 65%;
+    }
+
+    .form-row label {
+        font-size: 1em;
+    }
+
+    .two-cols {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2px;
+    }
+    .resolved {
+        padding-top: 0px;
+        margin-bottom: 50px;
+    }
+    
+
+    .rad-report input,
+    .resolved input {
+        width: 20px;
+        margin-top: 10px;
+    }
+
+    .btn-report button {
+        width: 185px;
+        margin: 25px;
+    }
+
+    .custom-summary {
+        font-size: 1.5em;
+        padding-left: 95px;
+        font-weight: 550;
+    }
+
+
+    /*Engenering*/
+    .rad-report{
+        margin-left: 90px;
+    }
+    .form-row{
+        box-sizing: 20;
+    }
+
+    /* Home Page - Three-column Layout */
+    /*home*/
+
+    .main-container {
+        display: flex;
+        flex-direction: row;
+        max-width: 1200px;
+        margin: 0 auto;
+        justify-content: space-between;
+        padding: 0 40px 40px;
+    }
+
+    .featuresCreateNCR,
+    .featuresViewNCR,
+    .featuresManageAcc {
+        padding-top: 315px;
+    }
+
+    .main-container section {
+        width: 100%;
+    }
+
+    .featuresCreateNCR,
+    .featuresViewNCR,
+    .featuresManageAcc {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        color: #fff;
+        flex: 0 1 30%;
+        height: 500px;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        transition: transform 0.3s ease;
+        position: relative;
+    }
+
+    .featuresCreateNCR h2,
+    .featuresViewNCR h2,
+    .featuresManageAcc h2 {
+        font-size: 2rem;
+    }
+
+    .reportInfo {
+        width: 55%;
+        /* Default width on larger screens */
+    }
+
+    .tab-button {
+        font-size: 16px;
+        /* Default font size on larger screens */
+        padding: 10px 20px;
+        /* Default padding */
+    }
+
+    .report-card .pinIcon {
+        visibility: hidden;
+    }
+
+    .report-card:hover .pinIcon {
+        visibility: visible;
+        /* Show pin icon on hover for laptops */
+    }
+
+    .report-card {
+        height: 40px;
+        align-items: center;
+    }
+
+    /* view ncr */
+
+    #search,
+    #date-filter {
+        width: 90%;
+    }
+
+    .filter-section {
+        margin: 0px 40px;
+    }
+
+    p {
+        margin-top: 5px;
+    }
+
+    .featuresCreateNCR p,
+    .featuresViewNCR p,
+    .featuresManageAcc p {
+        font-size: 1.25em;
+        margin: 25px 0 20px;
+    }
+
+    .featuresCreateNCR:hover,
+    .featuresViewNCR:hover,
+    .featuresManageAcc:hover {
+        transform: scale(1.05);
+    }
+
+    .ncr-table th,
+    .ncr-table td {
+        font-size: 1.1rem;
+    }
+
+    td button {
+        display: inline-block;
+        width: auto;
+    }
+
+    /*create ncr*/
+    .media {
+        padding: 0px 250px;
+    }
+
+    /*account*/
+    .account {
+        margin: 0px 100px;
+    }
+
+    form {
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    /* create ncr */
+    .form-section.active {
+        align-self: flex-start;
+        width: 100%;
+    }
+
+    fieldset.account {
+        padding: 0px 100px;
+    }
+
+
+
+    #qa-section {
+        align-items: flex-start;
+    }
+
+    .featuresCreateNCR button,
+    .featuresViewNCR button,
+    .featuresManageAcc button {
+        width: 62%;
+    }
+
+
+
+    .main-container-create {
+        flex-direction: row;
+    }
+
+    .status-bar {
+        width: 420px;
+    }
+
+    .status-steps {
+        flex-direction: column;
+    }
+
+    .step-icon {
+        display: block;
+    }
+
+    .status-steps {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .status-step {
+        display: flex;
+        align-items: center;
+        font-size: 18px;
+        line-height: 1.5;
+        position: relative;
+        padding-left: 25px;
+        margin-bottom: 20px;
+    }
+
+    .status-step:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        left: 10px;
+        top: 20px;
+        bottom: -20px;
+        background-color: white;
+
+    }
+
+    .step-icon {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        border: 2px solid #1a3153;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 20px;
+        font-size: 14px;
+        color: white;
+        font-weight: bold;
+        margin-right: 10px;
+        padding: 2px;
+    }
+
+
+
+    .status-step.active .step-icon {
+        width: 28px;
+        height: 28px;
+        line-height: 25px;
+        font-size: 16px;
+        border-width: 5px;
+        background-color: #1a3153;
+    }
+
+
+    .status-step.completed {
+        color: #757575;
+    }
+
+    .status-step.completed .step-icon {
+        background-color: #1a3153;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+
+    h1 {
+        font-size: 2.5rem
+    }
+
+    label,
+    p {
+        font-size: 1.2rem;
+    }
+
+    #footer-scroll p {
+        font-size: 1.2rem;
+    }
+
+    fieldset legend {
+        font-size: 1.2rem;
+    }
+
+    fieldset.account {
+        padding: 0px 200px;
+    }
+
+    button,
+    input[type="text"],
+    input[type="password"],
+    input[type="date"],
+    input[type="email"],
+    input[type="number"],
+    input[type="tel"],
+    select,
+    .form-section textarea {
+        font-size: 1.2rem;
+    }
+
+    /*account*/
+    .account {
+        margin: 0px 100px;
+        border-radius: 25px;
+    }
+
+    .account legend img {
+        height: 250px;
+        width: 250px;
+    }
+
+    /*view ncr*/
+
+    .ncr-table th,
+    .ncr-table td {
+        font-size: 18px;
+    }
+
+    #status-filter {
+        font-size: 1.4rem;
+    }
+
+    /*create ncr*/
+
+    .qa-process legend {
+        font-size: 1.2rem;
+    }
+
+    .status-bar div {
+        font-size: 1.2rem;
+    }
+
+    .form-section.active button {
+        height: 50px;
+        width: 30%;
+    }
+
+    .media legend,
+    .item-conforming legend {
+        font-size: 1.2rem;
+    }
+
+    .form-section.active label {
+        font-size: 1.2rem;
+    }
+
+    .form-row {
+        margin-left: 26px;
+    }
+
+    .form-row label,
+    .form-row input,
+    .form-row select,
+    .form-row textarea {
+        width: 65%;
+    }
+
+    .two-cols {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2px;
+    }
+
+    .rad-report,
+    .resolved {
+        align-self: flex-start;
+        /*margin-left: 115px;
+        margin-top: 15px;*/
+    }
+
+    .rad-report input,
+    .resolved input {
+        width: 20px;
+        margin-top: 10px;
+    }
+
+    .btn-report button {
+        width: 185px;
+        margin: 25px;
+    }
+
+
+    .custom-summary {
+        font-size: 1.2em;
+        padding-left: 128px;
+        font-weight: 600;
+    }
+
+    .confirmation p {
+        font-size: 1.2em;
+    }
+
+
+    .featuresCreateNCR button,
+    .featuresViewNCR button,
+    .featuresManageAcc button {
+        width: 80%;
+    }
+
+    /*contact us*/
+    .fieldset-contact #message {
+        width: 95%;
+    }
+
+
+
+    .indicator {
+        margin-left: 125px;
+    }
+
+
+}
+
+@media screen and (min-width: 1760px) {
+
+    /* General */
+    header img {
+        max-width: 400px;
+    }
+
+    header {
+        height: 100px;
+    }
+
+    footer {
+        font-size: 1.3em;
+        padding: 20px;
+    }
+
+    #footer-scroll p {
+        font-size: 1.7rem;
+    }
+
+    .linksNav,
+    .linksFooter {
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
+
+    footer p {
+        font-size: 1.5rem;
+        padding: 10px 0px;
+    }
+
+    h1 {
+        font-size: 3.5rem;
+    }
+
+    label,
+    .featuresCreateNCR p,
+    .featuresViewNCR p,
+    .featuresManageAcc p {
+        font-size: 1.7rem;
+    }
+
+    fieldset legend {
+        font-size: 2rem;
+    }
+
+    fieldset.account {
+        padding: 0px 500px;
+    }
+
+    .account input,
+    .account select {
+        width: 600px;
+        font-size: 1.7rem;
+    }
+
+    .date-filter {
+        width: 500px;
+    }
+
+    .serach-bar {
+        width: 500px;
+    }
+
+    .breadcrumb-item {
+        font-size: 1.5rem;
+    }
+
+    input[type="radio"] {
+        transform: scale(1.7);
+        margin: 0px 10px;
+    }
+
+    /*home page */
+    .main-container {
+        gap: 200px;
+        padding: 20px;
+        max-width: 1800px;
+    }
+
+    .featuresCreateNCR h2,
+    .featuresViewNCR h2,
+    .featuresManageAcc h2 {
+        font-size: 2.5rem;
+    }
+
+    button,
+    input[type="text"],
+    input[type="password"],
+    input[type="date"],
+    input[type="email"],
+    input[type="number"],
+    input[type="tel"],
+    select {
+        height: 60px;
+        font-size: 1.7rem;
+    }
+
+    .form-section textarea {
+        font-size: 1.7rem;
+    }
+
+    .featuresCreateNCR,
+    .featuresViewNCR,
+    .featuresManageAcc {
+        height: 600px;
+    }
+
+    .featuresCreateNCR button,
+    .featuresViewNCR button,
+    .featuresManageAcc button {
+        border-radius: 20px;
+        width: 50%;
+        height: 75px;
+    }
+
+    /* view ncr */
+    .filter-section {
+        margin: 40px 200px;
+    }
+
+    #search,
+    #date-filter {
+        height: 60px;
+    }
+
+    #status-filter,
+    #record-count {
+        font-weight: bold;
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+
+    .filter-section {
+        margin: 40px 200px;
+    }
+
+    .ncr-table thead th,
+    .ncr-table tbody td {
+        font-size: 1.7rem;
+        padding: 20px;
+    }
+
+    #btn-reset {
+        height: 60px;
+        width: 300px;
+    }
+
+    /*create cncr*/
+    .qa-info-section input[type="text"],
+    .qa-info-section input[type="number"],
+    .qa-info-section select {
+        width: 90%;
+    }
+
+    .form-section.active label {
+        font-size: 2rem;
+    }
+
+    .status-bar div {
+        font-size: 1.7rem;
+    }
+
+    .qa-process legend,
+    .media legend,
+    .item-conforming legend {
+        font-size: 2rem;
+    }
+
+    .form-section.active button {
+        margin: 20px 10px;
+    }
+
+    .confirmation p {
+        font-size: 2em;
+    }
+
+    /* account*/
+
+    .account {
+        margin: 0px 300px;
+    }
+
+    .account label {
+        font-size: 2rem;
+    }
+
+    .fieldset-viewncr {
+        width: 550px;
+    }
+
+    .form-section.active button {
+        height: 65px;
+        width: 25%;
+    }
+
+    .col-confirm {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+    }
+
+    /* account */
+    .account {
+        margin: 10px 300px 0px 300px;
+    }
+
+    .account legend img {
+        width: 350px;
+        height: 350px;
+    }
+
+    .rad-report,
+    .resolved {
+        align-self: flex-start;
+        margin-left: 140px;
+        /*margin-top: 15px;*/
+    }
+
+    .rad-report input,
+    .resolved input {
+        width: 20px;
+        margin-top: 10px;
+    }
+
+    .btn-report button {
+        width: 185px;
+        margin: 25px;
+    }
+
+    .custom-summary {
+        font-size: 2em;
+        padding-left: 153px;
+    }
+
+    /*privacy policy*/
+    .contact-info p {
+        margin: 20px 0px;
+        font-size: 1.7rem;
+    }
+
+    .form-row label {
+        font-size: 1.7em;
+    }
+
+    #privacy-wrapper p,
+    .summ-policy a,
+    strong {
+        font-size: 1.7rem;
+    }
+
+    #privacy-wrapper h2 {
+        font-size: 2.5rem;
+    }
+
+    #privacy-wrapper h3,
+    #table-of-contents {
+        font-size: 2rem;
+    }
+
+    #privacy-wrapper h1 {
+        font-size: 3.5rem;
+    }
+
+    /*contact us*/
+
+    .fieldset-contact {
+        padding: 0px 200px;
+    }
+
+    .fieldset-contact #message {
+        font-size: 1.7rem;
+    }
+
+    .fieldset-contact button {
+        font-size: 1.7rem;
+        height: 60px;
+    }
+
+    .fieldset-contact #name,
+    .fieldset-contact #email {
+        height: 60px;
+    }
+}
+
+@media screen and(min-width:320px) {
+   
+}

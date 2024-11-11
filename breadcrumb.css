@@ -1,0 +1,49 @@
+/* breadcrumbs container */
+.brdcontainer {
+    display: flex;
+    padding: 10px 0; /* Adjust padding as needed */
+    margin-left: 32px; /* Remove any default margin */
+    width: auto; /* Ensure it spans the full width of the page */
+}
+
+.breadcrumb {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+
+
+.breadcrumb-item {
+    margin-right: 1px; /* Space between items */
+    font-size: 0.85em;
+}
+
+.breadcrumb-item a {
+    display: inline;
+    text-decoration: none; /* Remove underline from links */
+    color: #174185; /* Link color */
+}
+
+.breadcrumb-item a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Separator styles */
+.breadcrumb-item::after {
+    content: "/"; /* Separator character */
+    margin-left: 5px; /* Space between the item and the separator */
+}
+
+/* Remove separator for the last item */
+.breadcrumb-item:last-child::after {
+    content: ""; /* No separator for the last item */
+}
+
+/* Active breadcrumb styling */
+.breadcrumb-item.active {
+    font-weight: bold; /* Make active item bold */
+    color: #555; /* Change color for active item */
+}
